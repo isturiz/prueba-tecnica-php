@@ -6,56 +6,50 @@ de desarrollar un sistema de gestión de ventas. El sistema debe permitir a los 
 ventas, calcular el total de la venta (incluyendo deducciones e impuestos), y también proporcionar
 estadísticas de ventas para cada vendedor.
 
-# Requisitos:
+## Requisitos de la prueba:
 
-## Base de Datos:
+1. ### Base de Datos:
 
-1. Crea una base de datos llamada "gestion_ventas".
-2. Diseña al menos tres tablas: "clientes", "productos", y "vendedores".
+    - Crea una base de datos llamada "gestion_ventas".
+    - Diseña al menos tres tablas: "clientes", "productos", y "vendedores".
 
-## Interfaz Web (SPA):
+2. ### Interfaz Web (SPA):
 
-#### Registro de Venta:
+    #### Registro de Venta:
 
-1. Formulario para ingresar la información del cliente (nombre, cédula/RIF, teléfono, dirección).
+    - Formulario para ingresar la información del cliente (nombre, cédula/RIF, teléfono, dirección).
 
-2. Formulario para agregar productos a la venta, incluyendo la selección de la
-categoría del producto, el precio base, y si tiene o no descuento (el impuesto es
-un valor fijo del 16%).
+    - Formulario para agregar productos a la venta, incluyendo la selección de la categoría del producto, el precio base, y si tiene o no descuento (el impuesto es un valor fijo del 16%).
 
-3. Visualización de la lista de productos agregados con su subtotal.
+    - Visualización de la lista de productos agregados con su subtotal.
 
-4. Cálculo automático del total de la venta (subtotal + IVA).
+    - Cálculo automático del total de la venta (subtotal + IVA).
 
-#### Estadísticas de Vendedor:
+    #### Estadísticas de Vendedor:
 
-1. Incluye un botón de visualización que abra un modal mostrando estadísticas de
-ventas para cada vendedor.
+    - Incluye un botón de visualización que abra un modal mostrando estadísticas de ventas para cada vendedor.
 
-2. Seleccionable de vendedores para ver sus estadísticas.
+    - Seleccionable de vendedores para ver sus estadísticas.
 
-3. Las estadísticas deben incluir el total de ventas, el número de ventas, y los
-productos más vendidos.
+    - Las estadísticas deben incluir el total de ventas, el número de ventas, y los productos más vendidos.
 
-## Validación:
+3. ### Validación:
 
-1. Implementa validación en los formularios para asegurar que los campos obligatorios
-estén completos y que los datos sean válidos.
+    - Implementa validación en los formularios para asegurar que los campos obligatorios estén completos y que los datos sean válidos.
 
-## Entregables:
+4. ### Entregables:
 
-* Archivos PHP que contengan el código necesario para la lógica del sistema.
+    - Archivos PHP que contengan el código necesario para la lógica del sistema.
 
-* Archivo SQL que contenga las instrucciones para crear la base de datos y las tablas.
+    - Archivo SQL que contenga las instrucciones para crear la base de datos y las tablas.
 
-### Observaciones:
+5. ### Observaciones:
 
-* La interfaz debe ser fácil de usar.
+    - La interfaz debe ser fácil de usar.
 
-* Considera el uso de AJAX para mejorar la experiencia del usuario, por ejemplo, al
-agregar productos a la venta sin recargar la página.
+    - Considera el uso de AJAX para mejorar la experiencia del usuario, por ejemplo, al agregar productos a la venta sin recargar la página.
 
-* Las bases de datos deben contener índices y estar relacionadas.
+    - Las bases de datos deben contener índices y estar relacionadas.
 
 # Inicialización del proyecto
 
