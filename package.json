@@ -1,0 +1,17 @@
+{
+  "name": "prueba-tecnica-php",
+  "version": "1.0.0",
+  "description": "Prueba técnica de PHP y MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "flowbite": "2.2.0",
+    "tailwindcss": "3.3.5"
+  }
+}
