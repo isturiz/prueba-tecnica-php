@@ -17,10 +17,14 @@ require_once 'controllers/ajax.php';
 
 
 if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedSellers') {
-  $ajaxController = new AjaxController($db);
-  $ajaxController->getUpdatedSellers();
+  $ajaxSellerController = new AjaxSellerController($db);
+  $ajaxSellerController->getUpdatedSellers();
 }
 
+if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCustomers') {
+  $ajaxCustomerController = new AjaxCustomerController($db);
+  $ajaxCustomerController->getUpdatedCustomers();
+}
 
 ?>
 
@@ -78,7 +82,11 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedSellers') {
 
   <script src="public/js/sellers.js"></script>
   <script src="public/js/search.js"></script>
-  <script src="public/js/addModal.js"></script>
+
+  <!-- AJAX -->
+  <script src="public/js/ajax/sellers.js"></script>
+  <script src="public/js/ajax/customers.js"></script>
+
 
 
 

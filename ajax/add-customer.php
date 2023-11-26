@@ -4,8 +4,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Recupera los datos del formulario
   $first_name = $_POST["first_name"];
   $first_surname = $_POST["first_surname"];
+  $email = $_POST["email"];
   $identify_rif = $_POST["identify_rif"];
   $phone = $_POST["phone"];
+  $address = $_POST["address"];
 
   // Incluye la configuración de la base de datos
   include 'config/api_config.php';
@@ -21,12 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Prepara la consulta de inserción
-  $sql = "INSERT INTO vendedores (primer_nombre, primer_apellido, cedula_rif, telefono) VALUES ('$first_name', '$first_surname', '$identify_rif', '$phone')";
+  $sql = "INSERT INTO clientes (primer_nombre, primer_apellido, cedula_rif, telefono, direccion) VALUES ('$first_name', '$first_surname', '$identify_rif', '$phone', '$address')";
 
   // Ejecuta la consulta
   if ($conn->query($sql) === TRUE) {
     // Envía una respuesta JSON exitosa
     echo json_encode(['success' => true, 'message' => 'Registro insertado correctamente en la base de datos.']);
+    
     exit();
   } else {
     // Envía una respuesta JSON con error
