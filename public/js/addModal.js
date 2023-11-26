@@ -27,9 +27,8 @@ function updateTable() {
         searchResultMessage.classList.remove('hidden');
 
         // Close modal
-        // const crudModal = document.getElementById('crud-modal');
-        // crudModal.classList.add('hidden');
-        // crudModal.hide()
+        const closeButton = document.querySelector('[data-modal-target="crud-modal"]');
+        closeButton.click();
       } else {
         console.error('Error al actualizar la tabla:', data.error);
       }
