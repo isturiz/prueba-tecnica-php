@@ -96,6 +96,8 @@
   </div>
 
 
+  <div id="sellers-section">
+
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" data-searchable>
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
@@ -127,6 +129,7 @@
     </tbody>
   </table>
   <p class="search-result-message pt-4 pl-4 text-sm text-gray-800 hidden font-medium"></p>
+  </div>
 
 
 </div>

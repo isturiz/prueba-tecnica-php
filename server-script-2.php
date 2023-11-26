@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($conn->query($sql) === TRUE) {
     // Envía una respuesta JSON exitosa
     echo json_encode(['success' => true, 'message' => 'Registro insertado correctamente en la base de datos.']);
-    
     exit();
   } else {
     // Envía una respuesta JSON con error
