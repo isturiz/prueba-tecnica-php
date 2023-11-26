@@ -1,25 +1,22 @@
 # Prueba de Programación en PHP y MySQL
 ## Sistema de Gestión de Ventas de Productos de Limpieza
 
-Imagina que estás trabajando en una empresa de productos de limpieza, y se te ha asignado la tarea
-de desarrollar un sistema de gestión de ventas. El sistema debe permitir a los vendedores registrar
-ventas, calcular el total de la venta (incluyendo deducciones e impuestos), y también proporcionar
-estadísticas de ventas para cada vendedor.
+Imagina que estás trabajando en una empresa de productos de limpieza, y se te ha asignado la tarea de desarrollar un sistema de gestión de ventas. El sistema debe permitir a los vendedores registrar ventas, calcular el total de la venta (incluyendo deducciones e impuestos), y también proporcionar estadísticas de ventas para cada vendedor.
 
 ## Requisitos de la prueba:
 
-1. ### Base de Datos:
+### 1. Base de Datos:
 
     - Crea una base de datos llamada "gestion_ventas".
     - Diseña al menos tres tablas: "clientes", "productos", y "vendedores".
 
-2. ### Interfaz Web (SPA):
+### 2. Interfaz Web (SPA):
 
     #### Registro de Venta:
 
-    - Formulario para ingresar la información del cliente (nombre, cédula/RIF, teléfono, dirección).
+    - Formulario para ingresar la información del cliente: nombre, cédula/RIF, teléfono, dirección.
 
-    - Formulario para agregar productos a la venta, incluyendo la selección de la categoría del producto, el precio base, y si tiene o no descuento (el impuesto es un valor fijo del 16%).
+    - Formulario para agregar productos a la venta: Categoría del producto (selección), precio base, disponibilidad de descuento (sí o no). El impuesto es un valor fijo de 16%
 
     - Visualización de la lista de productos agregados con su subtotal.
 
@@ -33,17 +30,17 @@ estadísticas de ventas para cada vendedor.
 
     - Las estadísticas deben incluir el total de ventas, el número de ventas, y los productos más vendidos.
 
-3. ### Validación:
+### 3. Validación:
 
     - Implementa validación en los formularios para asegurar que los campos obligatorios estén completos y que los datos sean válidos.
 
-4. ### Entregables:
+### 4. Entregables:
 
     - Archivos PHP que contengan el código necesario para la lógica del sistema.
 
     - Archivo SQL que contenga las instrucciones para crear la base de datos y las tablas.
 
-5. ### Observaciones:
+### 5. Observaciones:
 
     - La interfaz debe ser fácil de usar.
 
