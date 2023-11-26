@@ -13,9 +13,13 @@ require_once 'controllers/product.php';
 require_once 'controllers/customer.php';
 
 //  require_once 'api.php';
+require_once 'controllers/ajax.php';
 
 
-
+if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedSellers') {
+  $ajaxController = new AjaxController($db);
+  $ajaxController->getUpdatedSellers();
+}
 
 
 ?>
@@ -31,7 +35,7 @@ require_once 'controllers/customer.php';
   <script src="node_modules/flowbite/dist/datepicker.js"></script>
   <script src="node_modules/flowbite/dist/flowbite.js"></script>
 
-  <link rel="shortcut icon" type="image/jpg" href="public/img/favicon.ico"/>
+  <link rel="shortcut icon" type="image/jpg" href="public/img/favicon.ico" />
 
 </head>
 
@@ -75,6 +79,7 @@ require_once 'controllers/customer.php';
   <script src="public/js/sellers.js"></script>
   <script src="public/js/search.js"></script>
   <script src="public/js/addModal.js"></script>
+
 
 
 </body>
