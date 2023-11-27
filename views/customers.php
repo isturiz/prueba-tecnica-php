@@ -31,7 +31,7 @@
       </div>
 
 
-      <?php include_once 'modals/customer.php' ?>
+      <?php include_once 'modals/forms/customer.php' ?>
 
     </div>
 

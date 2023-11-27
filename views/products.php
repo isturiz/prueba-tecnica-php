@@ -31,7 +31,7 @@
       </div>
 
 
-      <?php include_once 'modals/product.php' ?>
+      <?php include_once 'modals/forms/product.php' ?>
     </div>
   </div>
 
