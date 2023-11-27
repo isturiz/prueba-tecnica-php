@@ -1,4 +1,6 @@
 <?php
+// controllers/seller.php
+
 require_once 'models/seller.php';
 
 class SellersController

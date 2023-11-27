@@ -5,6 +5,8 @@ require_once __DIR__ . '/config/config.php';
 require_once 'controllers/seller.php';
 require_once 'controllers/product.php';
 require_once 'controllers/customer.php';
+require_once 'controllers/sale.php';
+
 
 require_once 'controllers/ajax.php';
 
@@ -62,6 +64,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
   <div class="p-4 sm:ml-64">
     <div class="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg mt-14">
 
+      <?php
+      $saleController = new SalesController($db);
+      $saleController->showSales();
+      ?>
+      <?php //include_once 'views/sales.php' ?>
+      <!-- test -->
+
       <!-- Sellers -->
       <?php
       $sellerController = new SellersController($db);
@@ -82,12 +91,16 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
       $productController->showCustomers();
       ?>
       <?php include_once 'views/customers.php' ?>
+
+
     </div>
   </div>
 
   <script src="public/js/sections.js"></script>
   <script src="public/js/search.js"></script>
-  <script src="public/js/dark-mode.js"></script>
+  <script src="public/js/darkMode.js"></script>
+  <script src="public/js/formValidations.js"></script>
+
 
 
   <!-- AJAX -->
