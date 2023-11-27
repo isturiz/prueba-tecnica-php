@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tableSearches = document.querySelectorAll(".table-search");
-  const tables = document.querySelectorAll("[data-searchable]");
-  const resultMessages = document.querySelectorAll(".search-result-message");
 
-  function filterTable(searchInput, table, resultMessage) {
+  function filterTable(searchInput) {
     const searchText = searchInput.value.trim().toLowerCase();
     let matchCount = 0;
+
+    const table = document.getElementById(searchInput.dataset.searchable);
+    console.log(table.id)
+    const resultMessageContainer = document.querySelector(`[data-result-message="${table.id}"]`);
+    console.log(resultMessageContainer)
+    if (!resultMessageContainer) {
+      console.error(`No se encontró el contenedor de mensajes para ${table.id}`);
+      return;
+    }
 
     const tableRows = table.querySelectorAll("tbody tr");
 
@@ -21,23 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (searchText === "") {
-      resultMessage.textContent = "";
-      resultMessage.classList.add('hidden');
+      resultMessageContainer.textContent = "";
+      resultMessageContainer.classList.add('hidden');
     } else if (matchCount > 0) {
-      resultMessage.textContent = `Se encontraron ${matchCount} coincidencias.`;
-      resultMessage.classList.remove('hidden');
+      resultMessageContainer.textContent = `Se encontraron ${matchCount} coincidencias.`;
+      resultMessageContainer.classList.remove('hidden');
     } else {
-      resultMessage.textContent = "No se encontraron coincidencias.";
-      resultMessage.classList.remove('hidden');
+      resultMessageContainer.textContent = "No se encontraron coincidencias.";
+      resultMessageContainer.classList.remove('hidden');
     }
   }
 
-  tableSearches.forEach((searchInput, index) => {
-    const table = tables[index];
-    const resultMessage = resultMessages[index];
-
+  tableSearches.forEach((searchInput) => {
     searchInput.addEventListener("input", function () {
-      filterTable(searchInput, table, resultMessage);
+      filterTable(searchInput);
     });
   });
 });
