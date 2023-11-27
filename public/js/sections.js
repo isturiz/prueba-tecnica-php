@@ -28,6 +28,7 @@ const hideAllSections = () => {
   Object.values(linkIds).forEach(linkId => {
     const link = document.getElementById(linkId);
     link.classList.remove('bg-white');
+    link.classList.remove('dark:bg-gray-600');
   });
 }
 
@@ -42,6 +43,8 @@ const showSection = (sectionKey) => {
 
   section.classList.remove('hidden');
   link.classList.add('bg-white');
+  link.classList.add('dark:bg-gray-600');
+
 };
 
 window.addEventListener('load', () => {

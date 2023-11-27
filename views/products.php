@@ -30,17 +30,11 @@
       </div>
 
 
-      <!-- Add -->
-      <button type="button" onclick="window.location.href = ''" class="flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-2xl text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
-        </svg>
-        Nuevo
-      </button>
+      <?php include_once 'modals/product.php' ?>
     </div>
   </div>
 
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" data-searchable>
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" data-searchable id="productTable">
 
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
@@ -52,6 +46,9 @@
         </th>
         <th scope="col" class="px-6 py-3">
           Categoría
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Acción
         </th>
       </tr>
     </thead>
@@ -67,10 +64,25 @@
           <td class="px-6 py-4">
             <?= $product['id_categoria']; ?>
           </td>
+          <td class="px-6 py-4">
+          <button class="text-red-600 hover:text-red-800" onclick="deleteProduct(<?= $product['id_producto']; ?>)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 7h16" />
+              <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+              <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+              <path d="M10 12l4 4m0 -4l-4 4" />
+            </svg>
+          </button>
+        </td>
         </tr>
+        
+
       <?php endforeach; ?>
     </tbody>
   </table>
   <p class="search-result-message pt-4 pl-4 text-sm text-gray-800 hidden font-medium"></p>
+  <p class="message-product-table pt-4 pl-4 text-sm text-gray-800 hidden font-medium"></p>
+
 
 </div>

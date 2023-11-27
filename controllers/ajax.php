@@ -2,6 +2,8 @@
 // controllers/ajax.php
 require_once 'models/seller.php';
 require_once 'models/customer.php';
+require_once 'models/product.php';
+
 
 class AjaxSellerController
 {
@@ -15,7 +17,7 @@ class AjaxSellerController
   public function getUpdatedSellers()
   {
     $sellers = $this->sellerModel->getSellers();
-    echo json_encode(['success' => true, 'sellers' => $sellers]);
+    echo json_encode(['success' => true, 'response' => $sellers]);
     exit();
   }
 }
@@ -34,7 +36,25 @@ class AjaxCustomerController
   public function getUpdatedCustomers()
   {
     $customers = $this->customerModel->getCustomers();
-    echo json_encode(['success' => true, 'sellers' => $customers]);
+    echo json_encode(['success' => true, 'response' => $customers]);
     exit();
   }
 }
+
+class AjaxProductController
+{
+  private $productModel;
+
+  public function __construct($db)
+  {
+    $this->productModel = new ProductModel($db);
+  }
+
+  public function getUpdatedProducts()
+  {
+    $products = $this->productModel->getProducts();
+    echo json_encode(['success' => true, 'response' => $products]);
+    exit();
+  }
+}
+

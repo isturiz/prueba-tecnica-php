@@ -1,18 +1,11 @@
 <?php
 
-
-
-// require_once BASE_PATH . 'config/config.php';
-
-// include BASE_PATH . '/views/index.php';
-
 // Load the configuration
 require_once __DIR__ . '/config/config.php';
 require_once 'controllers/seller.php';
 require_once 'controllers/product.php';
 require_once 'controllers/customer.php';
 
-//  require_once 'api.php';
 require_once 'controllers/ajax.php';
 
 
@@ -25,6 +18,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCustomers') {
   $ajaxCustomerController = new AjaxCustomerController($db);
   $ajaxCustomerController->getUpdatedCustomers();
 }
+
+if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
+  $ajaxProductController = new AjaxProductController($db);
+  $ajaxProductController->getUpdatedProducts();
+}
+
+
 
 ?>
 
@@ -41,9 +41,16 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCustomers') {
 
   <link rel="shortcut icon" type="image/jpg" href="public/img/favicon.ico" />
 
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </head>
 
-<body>
+<body class="dark:bg-gray-700">
   <?php
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -53,7 +60,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCustomers') {
   <?php include_once 'views/includes/sidebar.php' ?>
 
   <div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 bg-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+    <div class="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg mt-14">
 
       <!-- Sellers -->
       <?php
@@ -78,14 +85,18 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCustomers') {
       <?php include_once 'views/customers.php' ?>
     </div>
   </div>
-  <!-- <script src="public/js/test.js"></script> -->
 
-  <script src="public/js/sellers.js"></script>
+  <script src="public/js/sections.js"></script>
   <script src="public/js/search.js"></script>
+  <script src="public/js/dark-mode.js"></script>
+
 
   <!-- AJAX -->
-  <script src="public/js/ajax/sellers.js"></script>
-  <script src="public/js/ajax/customers.js"></script>
+  <script src="public/js/ajax/updateTables.js"></script>
+  <script src="public/js/ajax/delete.js"></script>
+  <script src="public/js/ajax/add.js"></script>
+
+
 
 
 
