@@ -69,7 +69,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
       ?>
       <?php include_once 'views/sellers.php' ?>
 
-
       <!-- Products -->
       <?php
       $productController = new ProductsController($db);

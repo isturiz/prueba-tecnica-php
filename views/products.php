@@ -81,8 +81,8 @@
       <?php endforeach; ?>
     </tbody>
   </table>
-  <p class="search-result-message pt-4 pl-4 text-sm text-gray-800 hidden font-medium"></p>
-  <p class="message-product-table pt-4 pl-4 text-sm text-gray-800 hidden font-medium"></p>
+  <p class="search-result-message pt-4 pl-4 text-sm text-gray-800 dark:text-gray-200 hidden font-medium"></p>
+  <p class="message-product-table pt-4 pl-4 text-sm text-gray-800 dark:text-gray-200 hidden font-medium"></p>
 
 
 </div>
