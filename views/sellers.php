@@ -8,7 +8,7 @@
       <div class="flex items-center flex-1 space-x-4">
         <h5>
           <span class="text-gray-500 dark:text-gray-300">Número de vendedores</span>
-          <span class="dark:text-white">0</span>
+          <span class="dark:text-white" id="sellers-count"><?php echo count($sellers)?></span>
         </h5>
       </div>
     </div>

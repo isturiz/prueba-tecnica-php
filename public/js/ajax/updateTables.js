@@ -5,8 +5,8 @@ function updateCustomerTable() {
     .then(data => {
       if (data.success) {
         const tableBody = document.querySelector('#customerTable tbody');
+        const elemCount = document.getElementById("customers-count")
         tableBody.innerHTML = '';
-        console.log(data); 
 
 
         data.response.forEach(customer => {
@@ -39,6 +39,7 @@ function updateCustomerTable() {
                         </td>
                       </tr>`;
           tableBody.innerHTML += row;
+          elemCount.innerHTML = data.response.length;
         });
 
         const searchResultMessage = document.querySelector('.message-customer-table');
@@ -65,6 +66,8 @@ function updateSellerTable() {
     .then(data => {
       if (data.success) {
         const tableBody = document.querySelector('#sellerTable tbody');
+        const elemCount = document.getElementById("sellers-count")
+
         tableBody.innerHTML = '';
 
         data.response.forEach(seller => {
@@ -91,6 +94,8 @@ function updateSellerTable() {
                         </td>
                       </tr>`;
           tableBody.innerHTML += row;
+          elemCount.innerHTML = data.response.length;
+
         });
 
         const searchResultMessage = document.querySelector('.message-seller-table');
@@ -117,6 +122,8 @@ function updateProductTable() {
     .then(data => {
       if (data.success) {
         const tableBody = document.querySelector('#productTable tbody');
+        const elemCount = document.getElementById("products-count")
+
         tableBody.innerHTML = '';
 
         data.response.forEach(product => {
@@ -143,6 +150,8 @@ function updateProductTable() {
                         </td>
                       </tr>`;
           tableBody.innerHTML += row;
+          elemCount.innerHTML = data.response.length;
+
         });
 
         const searchResultMessage = document.querySelector('.message-product-table');
