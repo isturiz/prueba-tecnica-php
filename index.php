@@ -80,6 +80,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCategoryProducts') 
       <?php //include_once 'views/sales.php' ?>
       <!-- test -->
 
+      <!-- Customers -->
       
 
 
@@ -106,13 +107,11 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCategoryProducts') 
       <?php include_once 'views/categoryProducts.php'; ?>
 
 
-      <!-- Customers -->
       <?php
       $productController = new CustomersController($db);
       $productController->showCustomers();
       ?>
       <?php include_once 'views/customers.php'; ?>
-
 
 
     </div>
