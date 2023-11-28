@@ -88,5 +88,9 @@ Imagina que estás trabajando en una empresa de productos de limpieza, y se te h
     npm run build:css
     ```
 
+6. **Importar base de datos**
+
+    Puedes importar la base de datos desde `gestion_ventas_export.sql` o copiar las instrucciones sql de `gestion_ventas.sql` y posteriormente hacer el insert de datos con las instrucciones dentro de `inserts.sql`
+
 
 
