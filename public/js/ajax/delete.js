@@ -34,3 +34,8 @@ function deleteSeller(sellerId) {
 function deleteProduct(productId) {
   deleteRecord('product', productId, updateProductTable);
 }
+
+// Delete categoryproduct
+function deleteCategoryProduct(productId) {
+  deleteRecord('category-product', productId, updateCategoryProductTable);
+}

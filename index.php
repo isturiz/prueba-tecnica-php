@@ -30,6 +30,11 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
   $ajaxProductController->getUpdatedProducts();
 }
 
+if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCategoryProducts') {
+  $ajaxCategoryProductController = new AjaxCategoryProductController($db);
+  $ajaxCategoryProductController->getUpdatedProducts();
+}
+
 
 
 ?>

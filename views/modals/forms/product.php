@@ -25,7 +25,7 @@
        </div>
 
        <!-- Modal body -->
-       <form id="addProductForm" class="p-4 md:p-5" method="POST" action="ajax/product-form.php">
+       <form id="addProductForm" class="p-4 md:p-5" method="POST" action="ajax/add-product.php">
          <div class="grid gap-4 mb-4 grid-cols-2">
 
            <div class="col-span-2 sm:col-span-1">

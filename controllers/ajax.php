@@ -58,3 +58,20 @@ class AjaxProductController
   }
 }
 
+class AjaxCategoryProductController
+{
+  private $categoryProductModel;
+
+  public function __construct($db)
+  {
+    $this->categoryProductModel = new CategoryProductModel($db);
+  }
+
+  public function getUpdatedProducts()
+  {
+    $categoryProducts = $this->categoryProductModel->getCategoryProducts();
+    echo json_encode(['success' => true, 'response' => $categoryProducts]);
+    exit();
+  }
+}
+

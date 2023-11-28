@@ -1,13 +1,12 @@
 <div class="relative overflow-x-auto hidden" id="category-products-section">
 
-  <?php echo json_encode($categoryProducts)?>
   <div>
     <!-- first section -->
     <div class="flex py-3 flex-row lg:items-center justify-between space-y-0 space-x-4">
       <div class="flex items-center flex-1 space-x-4">
         <h5>
           <span class="text-gray-500 dark:text-gray-300">Número de vendedores</span>
-          <span class="dark:text-white" id="category-products-count"><?php // echo count($CategoryProducts) ?></span>
+          <span class="dark:text-white" id="category-products-count"><?php echo count($categoryProducts) ?></span>
         </h5>
       </div>
     </div>
@@ -31,7 +30,7 @@
         </div>
       </div>
 
-
+      <?php include_once 'modals/forms/categoryProduct.php' ?>
     </div>
   </div>
 

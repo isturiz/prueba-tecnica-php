@@ -58,7 +58,6 @@ const showSection = (sectionKey) => {
 // load current section
 window.addEventListener('load', () => {
   let fragment = window.location.hash.substring(1);
-  console.log(fragment)
 
   // Fix this, with kebab-case don't work (this is how hardcode works)
   if (fragment === "category-products") {

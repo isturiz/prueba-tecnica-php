@@ -1,4 +1,5 @@
 function submitForm(formId, url, updateTableFunction) {
+  console.log(formId)
   document.getElementById(formId).addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -30,4 +31,6 @@ submitForm('addCustomerForm', 'ajax/add-customer.php', updateCustomerTable);
 submitForm('addSellerForm', 'ajax/add-seller.php', updateSellerTable);
 
 submitForm('addProductForm', 'ajax/add-product.php', updateProductTable);
+submitForm('addCategoryProductForm', 'ajax/add-category-product.php', updateCategoryProductTable);
+
 
