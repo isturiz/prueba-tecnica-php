@@ -69,12 +69,15 @@ Imagina que estás trabajando en una empresa de productos de limpieza, y se te h
     ```bash
     npm install
     ```
+3. **Importa la base de datos**
 
-3. **Configura la Base de Datos (si es necesario):**
+    Puedes importar la base de datos desde `gestion_ventas_export.sql` o copiar las instrucciones sql de `gestion_ventas.sql` y posteriormente hacer el insert de datos con las instrucciones dentro de `inserts.sql`
+
+4. **Configura la Base de Datos (si es necesario):**
 
    - Editar el archivo `config/config.php` con los detalles de conexión a la base de datos.
 
-4. **Inicia el Servidor PHP:**
+5. **Inicia el Servidor PHP:**
 
     Puedes usar el servidor incorporado de PHP para ejecutar la aplicación.
 
@@ -82,15 +85,13 @@ Imagina que estás trabajando en una empresa de productos de limpieza, y se te h
     php -S localhost:8000
     ```
 
-5. **Compila los Estilos CSS:**
+6. **Compila los Estilos CSS:**
 
     ```bash
     npm run build:css
     ```
 
-6. **Importar base de datos**
 
-    Puedes importar la base de datos desde `gestion_ventas_export.sql` o copiar las instrucciones sql de `gestion_ventas.sql` y posteriormente hacer el insert de datos con las instrucciones dentro de `inserts.sql`
 
 
 
