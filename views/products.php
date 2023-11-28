@@ -74,7 +74,7 @@
             <?= "$" . $product['precio_base']; ?>
           </td>
           <td class="px-6 py-4">
-            <?= "$" . $precioConIVA ?>
+            <?= "$" . number_format($precioConIVA, 2) ?>
           </td>
           <td class="px-6 py-4">
             <?= $product['id_categoria']; ?> - <?= $product['nombre_categoria']; ?>
