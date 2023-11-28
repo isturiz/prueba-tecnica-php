@@ -1,3 +1,6 @@
+![System preview](https://github.com/isturiz/prueba-tecnica-php/blob/main/public/img/preview.png)
+
+
 # Prueba de Programación en PHP y MySQL
 ## Sistema de Gestión de Ventas de Productos de Limpieza
 
