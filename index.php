@@ -71,7 +71,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedCategoryProducts') 
   <?php include_once 'views/includes/sidebar.php' ?>
 
   <div class="p-4 sm:ml-64">
-    <div class="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg mt-14">
+    <div class="p-4 bg-gray-200 dark:bg-gray-800 rounded-2xl mt-14">
 
       <?php
       $saleController = new SalesController($db);

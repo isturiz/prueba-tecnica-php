@@ -6,7 +6,7 @@
       <div class="flex items-center flex-1 space-x-4">
         <h5>
           <span class="text-gray-500 dark:text-gray-300">Número de vendedores</span>
-          <span class="dark:text-white" id="products-count"><?php echo count($products)?></span>
+          <span class="dark:text-white" id="products-count"><?php echo count($products) ?></span>
         </h5>
       </div>
     </div>
@@ -46,6 +46,9 @@
           Precio Base
         </th>
         <th scope="col" class="px-6 py-3">
+          +IVA
+        </th>
+        <th scope="col" class="px-6 py-3">
           Categoría
         </th>
         <th scope="col" class="px-6 py-3">
@@ -55,6 +58,13 @@
     </thead>
     <tbody>
       <?php foreach ($products as $product) : ?>
+
+        <?php
+        $precioBase = $product['precio_base'];
+        $iva = $precioBase * 0.16;
+        $precioConIVA = $precioBase + $iva;
+        ?>
+
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
             <?= $product['nombre']; ?>
@@ -64,21 +74,24 @@
             <?= $product['precio_base']; ?>
           </td>
           <td class="px-6 py-4">
+            <?= number_format($iva, 2); ?>
+          </td>
+          <td class="px-6 py-4">
             <?= $product['id_categoria']; ?> - <?= $product['nombre_categoria']; ?>
           </td>
           <td class="px-6 py-4">
-          <button class="text-red-600 hover:text-red-800" onclick="deleteProduct(<?= $product['id_producto']; ?>)">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 7h16" />
-              <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-              <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-              <path d="M10 12l4 4m0 -4l-4 4" />
-            </svg>
-          </button>
-        </td>
+            <button class="text-red-600 hover:text-red-800" onclick="deleteProduct(<?= $product['id_producto']; ?>)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 7h16" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                <path d="M10 12l4 4m0 -4l-4 4" />
+              </svg>
+            </button>
+          </td>
         </tr>
-        
+
 
       <?php endforeach; ?>
     </tbody>
