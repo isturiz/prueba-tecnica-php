@@ -127,12 +127,30 @@ function updateProductTable() {
         tableBody.innerHTML = '';
 
         data.response.forEach(product => {
+
+          const precioBase = parseFloat(product.precio_base);
+          const iva = precioBase * 0.16;
+          const precioConIVA = precioBase + iva;
+
+          const descuentoAplicado = precioBase * (product.descuento / 100);
+          const precioConDescuento = (precioBase + iva) - descuentoAplicado;
+
+
           const row = `<tr class="table-row bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           ${product.nombre}
                         </th>
                         <td class="px-6 py-4">
-                          ${product.precio_base}
+                          $${product.precio_base}
+                        </td>
+                        <td class="px-6 py-4">
+                          $${precioConIVA.toFixed(2)}
+                        </td>
+                        <td class="px-6 py-4">
+                          ${product.descuento}%
+                        </td>
+                        <td class="px-6 py-4">
+                          $${precioConDescuento.toFixed(2)}
                         </td>
                         <td class="px-6 py-4">
                           ${product.id_categoria} - ${product.nombre_categoria}

@@ -49,6 +49,12 @@
           +IVA
         </th>
         <th scope="col" class="px-6 py-3">
+          Descuento (%)
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Total (+iva y descuento)
+        </th>
+        <th scope="col" class="px-6 py-3">
           Categoría
         </th>
         <th scope="col" class="px-6 py-3">
@@ -63,6 +69,10 @@
         $precioBase = $product['precio_base'];
         $iva = $precioBase * 0.16;
         $precioConIVA = $precioBase + $iva;
+
+        $descuento = $product['descuento'];
+        $descuentoAplicado = $precioConIVA * ($descuento / 100);
+        $precioConDescuento = $precioConIVA - $descuentoAplicado;
         ?>
 
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -75,6 +85,12 @@
           </td>
           <td class="px-6 py-4">
             <?= "$" . number_format($precioConIVA, 2) ?>
+          </td>
+          <td class="px-6 py-4">
+            <?= $product['descuento'] . "%"; ?>
+          </td>
+          <td class="px-6 py-4">
+            <?= "$" . number_format($precioConDescuento, 2) ?>
           </td>
           <td class="px-6 py-4">
             <?= $product['id_categoria']; ?> - <?= $product['nombre_categoria']; ?>
