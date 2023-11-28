@@ -1,5 +1,5 @@
 <?php
-
+// models/categoryProduct.php
 require_once 'models/connexion.php';
 
 class CategoryProductModel extends BaseModel

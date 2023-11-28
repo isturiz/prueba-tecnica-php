@@ -35,7 +35,7 @@
 
            <div class="col-span-2 sm:col-span-1">
              <label for="base_price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio base</label>
-             <input type="text" name="base_price" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Precio base" required="" data-validate-only-numbers-with-dot="true" >
+             <input type="text" name="base_price" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Precio base" required="" data-validate-only-numbers-with-dot="true">
            </div>
 
            <div class="col-span-2 sm:col-span-1">
@@ -44,9 +44,18 @@
            </div>
 
 
-           <div class="col-span-2 sm:col-span-1">
+           <!-- <div class="col-span-2 sm:col-span-1">
              <label for="id_category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoría</label>
              <input type="text" name="id_category" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="1" required="">
+           </div> -->
+
+           <div class="col-span-2 sm:col-span-1">
+             <label for="id_category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoría</label>
+             <select name="id_category" id="id_category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+               <?php foreach ($categoryProducts as $category) : ?>
+                 <option value="<?= $category['id_categoria']; ?>"><?= $category['nombre']; ?></option>
+               <?php endforeach; ?>
+             </select>
            </div>
          </div>
 

@@ -135,7 +135,7 @@ function updateProductTable() {
                           ${product.precio_base}
                         </td>
                         <td class="px-6 py-4">
-                          ${product.id_categoria}
+                          ${product.id_categoria} - ${product.nombre_categoria}
                         </td>
                         <td class="px-6 py-4">
                           <button class="text-red-600 hover:text-red-800" onclick="deleteProduct(${product.id_producto})">
