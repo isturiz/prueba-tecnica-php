@@ -7,46 +7,46 @@ Imagina que estás trabajando en una empresa de productos de limpieza, y se te h
 
 ### 1. Base de Datos:
 
-    - Crea una base de datos llamada "gestion_ventas".
-    - Diseña al menos tres tablas: "clientes", "productos", y "vendedores".
+- Crea una base de datos llamada "gestion_ventas".
+- Diseña al menos tres tablas: "clientes", "productos", y "vendedores".
 
 ### 2. Interfaz Web (SPA):
 
-    #### Registro de Venta:
+#### Registro de Venta:
 
-    - Formulario para ingresar la información del cliente: nombre, cédula/RIF, teléfono, dirección.
+- Formulario para ingresar la información del cliente: nombre, cédula/RIF, teléfono, dirección.
 
-    - Formulario para agregar productos a la venta: Categoría del producto (selección), precio base, disponibilidad de descuento (sí o no). El impuesto es un valor fijo de 16%
+- Formulario para agregar productos a la venta: Categoría del producto (selección), precio base, disponibilidad de descuento (sí o no). El impuesto es un valor fijo de 16%
 
-    - Visualización de la lista de productos agregados con su subtotal.
+- Visualización de la lista de productos agregados con su subtotal.
 
-    - Cálculo automático del total de la venta (subtotal + IVA).
+- Cálculo automático del total de la venta (subtotal + IVA).
 
-    #### Estadísticas de Vendedor:
+#### Estadísticas de Vendedor:
 
-    - Incluye un botón de visualización que abra un modal mostrando estadísticas de ventas para cada vendedor.
+- Incluye un botón de visualización que abra un modal mostrando estadísticas de ventas para cada vendedor.
 
-    - Seleccionable de vendedores para ver sus estadísticas.
+- Seleccionable de vendedores para ver sus estadísticas.
 
-    - Las estadísticas deben incluir el total de ventas, el número de ventas, y los productos más vendidos.
+- Las estadísticas deben incluir el total de ventas, el número de ventas, y los productos más vendidos.
 
 ### 3. Validación:
 
-    - Implementa validación en los formularios para asegurar que los campos obligatorios estén completos y que los datos sean válidos.
+- Implementa validación en los formularios para asegurar que los campos obligatorios estén completos y que los datos sean válidos.
 
 ### 4. Entregables:
 
-    - Archivos PHP que contengan el código necesario para la lógica del sistema.
+- Archivos PHP que contengan el código necesario para la lógica del sistema.
 
-    - Archivo SQL que contenga las instrucciones para crear la base de datos y las tablas.
+- Archivo SQL que contenga las instrucciones para crear la base de datos y las tablas.
 
 ### 5. Observaciones:
 
-    - La interfaz debe ser fácil de usar.
+- La interfaz debe ser fácil de usar.
 
-    - Considera el uso de AJAX para mejorar la experiencia del usuario, por ejemplo, al agregar productos a la venta sin recargar la página.
+- Considera el uso de AJAX para mejorar la experiencia del usuario, por ejemplo, al agregar productos a la venta sin recargar la página.
 
-    - Las bases de datos deben contener índices y estar relacionadas.
+- Las bases de datos deben contener índices y estar relacionadas.
 
 # Inicialización del proyecto
 
