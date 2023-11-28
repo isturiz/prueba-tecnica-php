@@ -2,15 +2,19 @@
 
 // Load the configuration
 require_once __DIR__ . '/config/config.php';
+
+// Load controllers
 require_once 'controllers/seller.php';
-require_once 'controllers/product.php';
 require_once 'controllers/customer.php';
 require_once 'controllers/sale.php';
+require_once 'controllers/product.php';
+require_once 'controllers/categoryProduct.php';
+
 
 
 require_once 'controllers/ajax.php';
 
-
+// ajax controllers
 if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedSellers') {
   $ajaxSellerController = new AjaxSellerController($db);
   $ajaxSellerController->getUpdatedSellers();
@@ -71,6 +75,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
       <?php //include_once 'views/sales.php' ?>
       <!-- test -->
 
+      
+
+
       <!-- Sellers -->
       <?php
       $sellerController = new SellersController($db);
@@ -85,12 +92,22 @@ if (isset($_GET['action']) && $_GET['action'] === 'getUpdatedProducts') {
       ?>
       <?php include_once 'views/products.php' ?>
 
+
+      <!-- Category Products -->
+      <?php
+      $categoryProductController = new CategoryProductsController($db);
+      $categoryProductController->showCategoryProducts();
+      ?>
+      <?php include_once 'views/categoryProducts.php'; ?>
+
+
       <!-- Customers -->
       <?php
       $productController = new CustomersController($db);
       $productController->showCustomers();
       ?>
-      <?php include_once 'views/customers.php' ?>
+      <?php include_once 'views/customers.php'; ?>
+
 
 
     </div>

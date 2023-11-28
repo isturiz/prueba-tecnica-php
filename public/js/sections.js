@@ -2,18 +2,22 @@
 const sectionIds = {
   sellers: 'sellers-section',
   products: 'products-section',
+  categoryProducts: 'category-products-section',
   customers: 'customers-section',
 };
 
 const linkIds = {
   sellers: 'sellers-link',
   products: 'products-link',
+  categoryProducts: 'category-products-link',
   customers: 'customers-link',
 };
 
+// Key access to sectionIds and LinkIds
 const simpleIds = {
   sellers: 'sellers',
   products: 'products',
+  categoryProducts: 'categoryProducts',
   customers: 'customers',
 }
 
@@ -41,22 +45,45 @@ const showSection = (sectionKey) => {
   const section = document.getElementById(sectionId);
   const link = document.getElementById(linkId);
 
-  section.classList.remove('hidden');
-  link.classList.add('bg-white');
-  link.classList.add('dark:bg-gray-600');
+  if (section && link) {
+    section.classList.remove('hidden');
+    link.classList.add('bg-white');
+    link.classList.add('dark:bg-gray-600');
+  } else {
+    console.error(`Element with ID ${sectionId} or ${linkId} not found`);
+  }
 
 };
 
+// load current section
 window.addEventListener('load', () => {
-  const fragment = window.location.hash.substring(1);
-  if (Object.keys(sectionIds).includes(fragment)) {
+  let fragment = window.location.hash.substring(1);
+  console.log(fragment)
+
+  // Fix this, with kebab-case don't work (this is how hardcode works)
+  if (fragment === "category-products") {
+    fragment = simpleIds.categoryProducts;
+    if (Object.keys(sectionIds).includes(fragment)) {
+      showSection(fragment);
+    }
+  }
+  else if (Object.keys(sectionIds).includes(fragment)) {
     showSection(fragment);
   }
 });
 
+// load correct section
 window.addEventListener('hashchange', () => {
-  const fragment = window.location.hash.substring(1);
-  if (Object.keys(sectionIds).includes(fragment)) {
+  let fragment = window.location.hash.substring(1);
+
+  // Same, fix this, with kebab-case don't work (this is how hardcode works)
+  if (fragment === "category-products") {
+    fragment = simpleIds.categoryProducts;
+    if (Object.keys(sectionIds).includes(fragment)) {
+      showSection(fragment);
+    }
+  }
+  else if (Object.keys(sectionIds).includes(fragment)) {
     showSection(fragment);
   }
 });
@@ -64,4 +91,5 @@ window.addEventListener('hashchange', () => {
 
 document.getElementById(linkIds.sellers).addEventListener('click', () => showSection(simpleIds.sellers));
 document.getElementById(linkIds.products).addEventListener('click', () => showSection(simpleIds.products));
+document.getElementById(linkIds.categoryProducts).addEventListener('click', () => showSection(simpleIds.categoryProducts));
 document.getElementById(linkIds.customers).addEventListener('click', () => showSection(simpleIds.customers));

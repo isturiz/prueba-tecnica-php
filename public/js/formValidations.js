@@ -1,12 +1,11 @@
 // Only letters 
-//data-validate-only-letters="true" <- property
+// data-validate-only-letters="true" <- property
 const validateOnlyLettersInput = (inputField) => {
   inputField.addEventListener("input", () => {
       const inputValue = inputField.value;
       const isValid = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ´.]*$/.test(inputValue);
 
       if (!isValid) {
-          // alert("El campo debe contener solo letras.");
           inputField.value = inputValue.replace(/[^A-Za-zÁáÉéÍíÓóÚúÜüÑñ´.]+/g, "");
       }
   });
@@ -18,15 +17,15 @@ validateLetterInputs.forEach((input) => {
 
 
 // Only numbers
-//data-validate-only-numbers="true" <- property
+// data-validate-only-numbers="true" <- property
 const validateOnlyNumbers = (inputField) => {
   inputField.addEventListener("input", () => {
       const inputValue = inputField.value;
-      const isValid = /^\d+$/.test(inputValue); // Expresión regular para permitir solo números
+      const isValid = /^\d+$/.test(inputValue);
+
 
       if (!isValid) {
-          //alert("El campo debe contener solo números.");
-          inputField.value = inputValue.replace(/[^\d]+/g, ""); // Eliminar caracteres no numéricos
+          inputField.value = inputValue.replace(/[^\d]+/g, ""); // Delete non-numbers
       }
   });
 };
@@ -37,8 +36,51 @@ validateNumberInputs.forEach((input) => {
 });
 
 
+// Only identify
+// data-validate-only-identify="true" <- property
+const validateIdentify = (inputField) => {
+  inputField.addEventListener("input", () => {
+    let inputValue = inputField.value;
+
+    // Allow E, V, F (Upper or Lower) followed by numbers
+    const isValid = /^[EVRevr]\d+$/.test(inputValue);
+
+
+    if (!isValid) {
+      // Eliminar caracteres no permitidos
+      inputField.value = inputValue.replace(/[^EVRevr\d]+/g, "");
+    }
+  });
+};
+
+const validateIdentifyInputs = document.querySelectorAll("[data-validate-only-identify='true']");
+validateIdentifyInputs.forEach((input) => {
+  validateIdentify(input);
+});
+
+
+// data-validate-only-numbers-with-dot="true" <- property
+const validateOnlyNumbersWithDot = (inputField) => {
+  inputField.addEventListener("input", () => {
+      const inputValue = inputField.value;
+      const isValid = /^(\d+|\d*\.\d*|\d*,\d*)$/.test(inputValue);
+
+
+      if (!isValid) {
+          inputField.value = inputValue.replace(/[^\d]+/g, ""); // Delete non-numbers
+      }
+  });
+};
+
+const validateNumberWithDotInputs = document.querySelectorAll("[data-validate-only-numbers-with-dot='true']");
+validateNumberWithDotInputs.forEach((input) => {
+  validateOnlyNumbersWithDot(input);
+});
+
+
+
 // Only dates
-//data-validate-only-dates="true" <- property
+// data-validate-only-dates="true" <- property
 const validateOnlyDates = (inputField) => {
   inputField.addEventListener("input", () => {
       const inputValue = inputField.value;
